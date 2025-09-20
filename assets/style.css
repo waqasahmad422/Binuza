@@ -1,0 +1,257 @@
+/* scroll bar design itself  */
+/* Custom scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+  width: 5px; /* width of vertical scrollbar */
+  height: 8vh; /* height of horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f8b5a1; /* scrollbar track */
+  /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f1663e;
+  /* border-radius: 10px; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+/* header section  */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.35em 7em 1.35em 7.7em;
+  box-shadow: 8px 5px 7px rgba(0, 0, 0, 0.3);
+}
+.nav .nav-link {
+  color: #020842;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.draw-down {
+  font-size: 11px;
+  /* font-weight: 400; */
+}
+.nav .nav-icon {
+  margin: 0 -5px;
+  font-size: 20px;
+  font-weight: 300;
+}
+.nav .nav-link:hover {
+  color: #f16663;
+}
+.nav .nav-icon:hover {
+  color: #020842;
+}
+
+/* header section end  */
+
+/* hero section  */
+.hero {
+  width: 100%;
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3.4em 0 7.5em;
+  background-image: url(./images/hero/hero-bg-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  box-sizing: border-box;
+}
+.hero-title {
+  text-transform: capitalize;
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 125%;
+  color: #020842;
+}
+.hero .hero-detail {
+  max-width: 500px;
+  margin-top: 20px;
+  color: #687799;
+}
+
+/* heor shap aniamtion */
+.hero-shap-2 {
+  width: 6em;
+  position: absolute;
+  top: 6.5em;
+  left: 10em;
+  animation: moving 1.5s ease-in-out infinite alternate;
+}
+@keyframes moving {
+  from {
+    top: 6.5em;
+  }
+  to {
+    top: 5em;
+  }
+}
+/* heroshap 3 animation */
+.hero-shap-3 {
+  width: 6.5em;
+  position: absolute;
+  bottom: 7em;
+  right: 9em;
+  animation: shap2 1.5s ease-in-out infinite alternate;
+}
+@keyframes shap2 {
+  from {
+    bottom: 7em;
+  }
+  to {
+    bottom: 8.5em;
+  }
+}
+
+/* animation for boxes  */
+.box-shape-1 {
+  position: absolute;
+  bottom: 8.5em;
+  left: 42%;
+  animation: box1 1.5s ease-in-out infinite alternate;
+}
+@keyframes box1 {
+  from {
+    bottom: 8.5em;
+  }
+  to {
+    bottom: 10em;
+  }
+}
+.box-shape-2 {
+  /* width: 6em; */
+  position: absolute;
+  top: 12.6em;
+  right: 3.5em;
+  animation: box2 1.5s ease-in-out infinite alternate;
+}
+@keyframes box2 {
+  from {
+    right: 3.5em;
+  }
+  to {
+    right: 2em;
+  }
+}
+
+/* ===================== */
+/* Responsive Design */
+/* ===================== */
+
+/* Large Tablets (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .nav-bar {
+    padding: 1em 4em;
+  }
+
+  .hero-title {
+    font-size: 55px;
+  }
+
+  .hero {
+    padding: 0 2em;
+  }
+}
+
+/* Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .nav {
+    gap: 1em;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 3em 2em;
+  }
+
+  .hero-details {
+    margin-bottom: 2em;
+  }
+
+  .hero-title {
+    font-size: 45px;
+  }
+
+  .hero .hero-detail {
+    margin: 1em auto;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .nav-bar {
+    padding: 1em 2em;
+  }
+
+  .nav {
+    display: none; /* hide default nav */
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 1em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-bar .nav-item {
+    margin: 0.5em 0;
+  }
+
+  /* show menu icon */
+  .nav .nav-icon:last-child {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 35px;
+    line-height: 1.2;
+  }
+
+  .hero .hero-detail {
+    font-size: 15px;
+    max-width: 90%;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero .hero-detail {
+    font-size: 14px;
+  }
+
+  .nav-bar {
+    padding: 1em;
+  }
+}
